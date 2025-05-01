@@ -8,7 +8,11 @@ from sklearn.preprocessing import StandardScaler,LabelEncoder,OneHotEncoder
 #loading the trained model
 
 model=tf.keras.models.load_model('model.h5')
-
+model.compile(
+    optimizer='adam', 
+    loss='binary_crossentropy', 
+    metrics=['accuracy']
+)
 #load Scalers and encoder
 
 with open('label_encoder_gender.pkl','rb') as file:
